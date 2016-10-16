@@ -19,6 +19,9 @@ public class SpringHelloApp {
 //        wywolanie metody na beanie
         System.out.println(theCoach.getDailyWorkout());
 
+//        wywolanie nowej metody na fortuneSerice
+        System.out.println(theCoach.getDailyFortune());
+
 //        zamkniecie context
         context.close();
 

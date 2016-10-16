@@ -11,9 +11,17 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Definiowanie beana -->
+    <bean id="myFortune"
+          class="com.mcieciak.springdemo.HappyFortuneService">
+    </bean>
+
+
     <bean id="myCoach"
     class="com.mcieciak.springdemo.TrackCoach">
+        <!--Constructor injection-->
+        <constructor-arg ref="myFortune"/>
     </bean>
+
     
 </beans>
 

@@ -5,8 +5,21 @@ package com.mcieciak.springdemo;
  */
 public class BaseballCoach implements Coach{
 
+//    prywatne pole dla dependency
+    private FortuneService fortuneService;
+
+//    konstruktor dla dependency injection
+    public BaseballCoach(FortuneService theFortuneService){
+        fortuneService=theFortuneService;
+    }
+
     @Override
     public String getDailyWorkout(){
         return "Spent 30minutes on batting practice";
+    }
+
+    @Override
+    public String getDailyFortune() {
+        return fortuneService.getFortune();
     }
 }
