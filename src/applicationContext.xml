@@ -11,18 +11,22 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Definiowanie beana -->
-    <bean id="myFortune"
+    <bean id="myFortuneService"
           class="com.mcieciak.springdemo.HappyFortuneService">
     </bean>
 
 
     <bean id="myCoach"
     class="com.mcieciak.springdemo.TrackCoach">
-        <!--Constructor injection-->
-        <constructor-arg ref="myFortune"/>
+        <!--ustawienie Constructor injection-->
+        <constructor-arg ref="myFortuneService"/>
     </bean>
 
-    
+    <bean id="myCricketCoach"
+          class="com.mcieciak.springdemo.CricketCoach">
+        <!--ustawienie Setter injection-->
+        <property name="fortuneService" ref="myFortuneService"/>
+    </bean>
 </beans>
 
 
