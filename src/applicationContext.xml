@@ -15,18 +15,28 @@
           class="com.mcieciak.springdemo.HappyFortuneService">
     </bean>
 
-
     <bean id="myCoach"
     class="com.mcieciak.springdemo.TrackCoach">
         <!--ustawienie Constructor injection-->
         <constructor-arg ref="myFortuneService"/>
     </bean>
 
+    <!--<bean id="myCricketCoach"-->
+          <!--class="com.mcieciak.springdemo.CricketCoach">-->
+        <!--&lt;!&ndash;ustawienie Setter injection&ndash;&gt;-->
+        <!--<property name="fortuneService" ref="myFortuneService"/>-->
+    <!--</bean>-->
+    
     <bean id="myCricketCoach"
-          class="com.mcieciak.springdemo.CricketCoach">
+            class="com.mcieciak.springdemo.CricketCoach">
         <!--ustawienie Setter injection-->
         <property name="fortuneService" ref="myFortuneService"/>
+        <!--ustawienie Literal values injection-->
+        <property name="emailAddress" value="mc424i@gmail.com"/>
+        <property name="team" value="Sunrise"/>
+        
     </bean>
+
 </beans>
 
 
