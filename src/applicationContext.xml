@@ -37,8 +37,20 @@
         <!--ustawienie Literal values injection-->
         <property name="emailAddress" value="${foo.email}"/>
         <property name="team" value="${foo.team}"/>
-        
     </bean>
+
+    <bean id="myActivityFortuneService"
+          class="com.mcieciak.springdemo.ActivityFortuneService">
+    </bean>
+
+    <bean id="myActivityCoach"
+          class="com.mcieciak.springdemo.ActivityCoach">
+        <property name="fortuneService" ref="myActivityFortuneService"/>
+
+        <property name="emailAddress" value="${foo.email}"/>
+        <property name="team" value="${foo.team}"/>
+    </bean>
+
 
 </beans>
 
